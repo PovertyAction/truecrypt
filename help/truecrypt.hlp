@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.1.0 Matthew White 14mar2012}{...}
+{* *! version 1.2.0 Matthew White 03jul2012}{...}
 {cmd:help truecrypt}
 {hline}
 
@@ -30,9 +30,12 @@ Dismount a TrueCrypt volume
 {synopthdr}
 {synoptline}
 {synopt :{opt m:ount}}mount the TrueCrypt volume {it:filename}{p_end}
-{synopt :{opt dis:mount}}dismount the TrueCrypt volume specified by {opt drive}{p_end}
-{synopt :{opt dr:ive(drive_letter)}}mount the volume as {it:drive_letter} or dismount the volume specified by {it:drive_letter}{p_end}
-{synopt :{opt prog:dir(directory_name)}}the directory that contains TrueCrypt.exe; default is {res:C:\Program Files\TrueCrypt}{p_end}
+{synopt :{opt dis:mount}}dismount the TrueCrypt volume specified by {opt drive()}{p_end}
+{synopt :{opt dr:ive(drive_letter)}}mount the volume as {it:drive_letter} or dismount the volume specified by
+{it:drive_letter}{p_end}
+{synopt :{opt prog:dir(directory_name)}}the directory that contains the TrueCrypt application; default is
+{cmd:C:\Program Files\TrueCrypt} (Stata for Windows) or {cmd:/Applications} (Stata for Mac)
+{p_end}
 {synoptline}
 {p2colreset}{...}
 
@@ -46,12 +49,18 @@ Dismount a TrueCrypt volume
 {title:Options}
 
 {phang}
-{opt m:ount} specifies that the TrueCrypt volume {it:filename} will be mounted. If neither {opt mount} nor {opt dismount} is specified, {opt mount}
-is implied.
+{opt m:ount} specifies that the TrueCrypt volume {it:filename} will be mounted. If neither {opt mount} nor
+{opt dismount} is specified, {opt mount} is implied.
 
 {phang}
-{opt dr:ive(drive_letter)} specifies the drive letter to use for mounting or dismounting. If {opt mount} is specified and {opt drive()} is not, the
-first free drive letter is used.
+{opt dr:ive(drive_letter)} specifies the drive letter to use for mounting or dismounting. If {opt mount} is specified
+and {opt drive()} is not, the first free drive letter is used. On Mac, the mount directory is
+{cmd:~/}{it:drive_letter}{cmd:colon}.
+
+
+{title:Acknowledgements}
+
+{phang}Christopher Robert of the Harvard Kennedy School supplied code to make {cmd:truecrypt} compatible with Stata for Mac.
 
 
 {title:Author}
