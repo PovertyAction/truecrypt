@@ -46,6 +46,14 @@ Dismount a TrueCrypt volume
 {cmd:truecrypt} mounts or dismounts a TrueCrypt volume.
 
 
+{title:Remarks}
+
+{pstd}
+The GitHub repository for {cmd:truecrypt} is
+{browse "https://github.com/PovertyAction/truecrypt":here}.
+Previous versions may be found there: see the tags.
+
+
 {title:Options}
 
 {phang}
