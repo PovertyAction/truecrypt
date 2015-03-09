@@ -1,5 +1,5 @@
 {smcl}
-{* *! version 1.2.0 Matthew White 03jul2012}{...}
+{* *! version 1.2.1 Matthew White 09mar2015}{...}
 {cmd:help truecrypt}
 {hline}
 
@@ -46,6 +46,14 @@ Dismount a TrueCrypt volume
 {cmd:truecrypt} mounts or dismounts a TrueCrypt volume.
 
 
+{title:Remarks}
+
+{pstd}
+The GitHub repository for {cmd:truecrypt} is
+{browse "https://github.com/PovertyAction/truecrypt":here}.
+Previous versions may be found there: see the tags.
+
+
 {title:Options}
 
 {phang}
@@ -65,5 +73,8 @@ and {opt drive()} is not, the first free drive letter is used. On Mac, the mount
 
 {title:Author}
 
-{phang}Matthew White, Innovations for Poverty Action{p_end}
-{phang}mwhite@poverty-action.org{p_end}
+{pstd}Matthew White{p_end}
+
+{pstd}For questions or suggestions, submit a
+{browse "https://github.com/PovertyAction/truecrypt/issues":GitHub issue}
+or e-mail researchsupport@poverty-action.org.{p_end}
