@@ -7,7 +7,7 @@ pr veracrypt
 		ex 198
 	}
 
-	syntax [anything(name=volume)], [Mount DISmount DRive(str) PROGdir(str)]
+	syntax [anything(name=volume)], [Mount DISmount DRive(str) PROGdir(str) Truecrypt]
 
 	***Check syntax***
 
@@ -128,14 +128,14 @@ pr veracrypt
 	if c(os) == "Windows" {
 		* -mount-
 		if "`mount'" != "" ///
-			sh "`progdir'\VeraCrypt.exe" /v "`volume'" `=cond("`drive'" != "", "/l `drive'", "")' /q
+			sh "`progdir'\VeraCrypt.exe" `=cond("`truecrypt'" != "", "/truecrypt", "")' /v "`volume'" `=cond("`drive'" != "", "/l `drive'", "")' /q
 		* -dismount-
 		else ///
 			sh "`progdir'\VeraCrypt.exe" /d `drive' /q
 	}
 	else {
 		if "`mount'" != "" ///
-			sh "`progdir'/VeraCrypt" "`volume'" `drive'
+			sh "`progdir'/VeraCrypt" `=cond("`truecrypt'" != "", "--truecrypt", "")' "`volume'" `drive'
 		else ///
 			sh "`progdir'/VeraCrypt" -d `drive'
 	}
