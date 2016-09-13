@@ -1,4 +1,4 @@
-*! version 1.2.0 Matthew White 03jul2012
+*! version 1.3.0 Patrick McNeal 13sep2016
 pr veracrypt
 	vers 9
 
