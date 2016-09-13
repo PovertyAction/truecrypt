@@ -1,40 +1,40 @@
 {smcl}
 {* *! version 1.2.1 Matthew White 09mar2015}{...}
-{cmd:help truecrypt}
+{cmd:help veracrypt}
 {hline}
 
 {title:Title}
 
 {p2colset 5 23 25 2}{...}
-{p2col: {cmd:truecrypt} {hline 2} Mount or dismount a TrueCrypt volume}{p_end}
+{p2col: {cmd:veracrypt} {hline 2} Mount or dismount a VeraCryt volume}{p_end}
 {p2colreset}{...}
 
 
 {title:Syntax}
 
 {phang}
-Mount a TrueCrypt volume
+Mount a VeraCryt volume
 
 {p 8 10 2}
-{cmd:truecrypt} {it:filename}{cmd:,} [{opt m:ount}] [{it:options}]
+{cmd:veracrypt} {it:filename}{cmd:,} [{opt m:ount}] [{it:options}]
 
 
 {phang}
-Dismount a TrueCrypt volume
+Dismount a VeraCryt volume
 
 {p 8 10 2}
-{cmd:truecrypt,} {opt dis:mount} {opt dr:ive(drive_letter)} [{it:options}]
+{cmd:veracrypt,} {opt dis:mount} {opt dr:ive(drive_letter)} [{it:options}]
 
 
 {synoptset 23 tabbed}{...}
 {synopthdr}
 {synoptline}
-{synopt :{opt m:ount}}mount the TrueCrypt volume {it:filename}{p_end}
-{synopt :{opt dis:mount}}dismount the TrueCrypt volume specified by {opt drive()}{p_end}
+{synopt :{opt m:ount}}mount the VeraCryt volume {it:filename}{p_end}
+{synopt :{opt dis:mount}}dismount the VeraCryt volume specified by {opt drive()}{p_end}
 {synopt :{opt dr:ive(drive_letter)}}mount the volume as {it:drive_letter} or dismount the volume specified by
 {it:drive_letter}{p_end}
-{synopt :{opt prog:dir(directory_name)}}the directory that contains the TrueCrypt application; default is
-{cmd:C:\Program Files\TrueCrypt} (Stata for Windows) or {cmd:/Applications} (Stata for Mac)
+{synopt :{opt prog:dir(directory_name)}}the directory that contains the VeraCryt application; default is
+{cmd:C:\Program Files\VeraCryt} (Stata for Windows) or {cmd:/Applications} (Stata for Mac)
 {p_end}
 {synoptline}
 {p2colreset}{...}
@@ -43,13 +43,13 @@ Dismount a TrueCrypt volume
 {title:Description}
 
 {pstd}
-{cmd:truecrypt} mounts or dismounts a TrueCrypt volume.
+{cmd:veracrypt} mounts or dismounts a VeraCryt volume.
 
 
 {title:Remarks}
 
 {pstd}
-The GitHub repository for {cmd:truecrypt} is
+The GitHub repository for {cmd:veracrypt} is
 {browse "https://github.com/PovertyAction/truecrypt":here}.
 Previous versions may be found there: see the tags.
 
@@ -57,7 +57,7 @@ Previous versions may be found there: see the tags.
 {title:Options}
 
 {phang}
-{opt m:ount} specifies that the TrueCrypt volume {it:filename} will be mounted. If neither {opt mount} nor
+{opt m:ount} specifies that the VeraCryt volume {it:filename} will be mounted. If neither {opt mount} nor
 {opt dismount} is specified, {opt mount} is implied.
 
 {phang}
@@ -68,7 +68,7 @@ and {opt drive()} is not, the first free drive letter is used. On Mac, the mount
 
 {title:Acknowledgements}
 
-{phang}Christopher Robert of the Harvard Kennedy School supplied code to make {cmd:truecrypt} compatible with Stata for Mac.
+{phang}Christopher Robert of the Harvard Kennedy School supplied code to make {cmd:veracrypt} compatible with Stata for Mac.
 
 
 {title:Author}
