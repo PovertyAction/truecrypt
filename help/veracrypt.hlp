@@ -31,6 +31,7 @@ Dismount a VeraCryt volume
 {synoptline}
 {synopt :{opt m:ount}}mount the VeraCryt volume {it:filename}{p_end}
 {synopt :{opt dis:mount}}dismount the VeraCryt volume specified by {opt drive()}{p_end}
+{synopt :{opt tc:volume}}treate volume {it:filename} as TrueCrypt volume{p_end}
 {synopt :{opt dr:ive(drive_letter)}}mount the volume as {it:drive_letter} or dismount the volume specified by
 {it:drive_letter}{p_end}
 {synopt :{opt prog:dir(directory_name)}}the directory that contains the VeraCryt application; default is
@@ -65,16 +66,21 @@ Previous versions may be found there: see the tags.
 and {opt drive()} is not, the first free drive letter is used. On Mac, the mount directory is
 {cmd:~/}{it:drive_letter}{cmd:colon}.
 
+{phang}
+{opt tc:volume} Enable TrueCrypt mode when mounting the volume.
+
 
 {title:Acknowledgements}
+
+{phang}Based on truecrypt from Matthew White and Innovations for Poverty Action (IPA)
 
 {phang}Christopher Robert of the Harvard Kennedy School supplied code to make {cmd:veracrypt} compatible with Stata for Mac.
 
 
 {title:Author}
 
+{pstd}Patrick McNeal{p_end}
 {pstd}Matthew White{p_end}
 
 {pstd}For questions or suggestions, submit a
-{browse "https://github.com/PovertyAction/truecrypt/issues":GitHub issue}
-or e-mail researchsupport@poverty-action.org.{p_end}
+{browse "https://github.com/J-PAL/VeraCrypt/issues":GitHub issue}.{p_end}
