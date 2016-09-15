@@ -31,7 +31,7 @@ Dismount a VeraCryt volume
 {synoptline}
 {synopt :{opt m:ount}}mount the VeraCryt volume {it:filename}{p_end}
 {synopt :{opt dis:mount}}dismount the VeraCryt volume specified by {opt drive()}{p_end}
-{synopt :{opt tc:volume}}treate volume {it:filename} as TrueCrypt volume{p_end}
+{synopt :{opt truecryptvolume}}treate volume {it:filename} as TrueCrypt volume{p_end}
 {synopt :{opt dr:ive(drive_letter)}}mount the volume as {it:drive_letter} or dismount the volume specified by
 {it:drive_letter}{p_end}
 {synopt :{opt prog:dir(directory_name)}}the directory that contains the VeraCryt application; default is
@@ -67,7 +67,7 @@ and {opt drive()} is not, the first free drive letter is used. On Mac, the mount
 {cmd:~/}{it:drive_letter}{cmd:colon}.
 
 {phang}
-{opt tc:volume} Enable TrueCrypt mode when mounting the volume.
+{opt truecryptvolume} Enable TrueCrypt mode when mounting the volume.
 
 
 {title:Acknowledgements}
