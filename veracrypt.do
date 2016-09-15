@@ -7,7 +7,7 @@ pr veracrypt
 		ex 198
 	}
 
-	syntax [anything(name=volume)], [Mount DISmount TRUEcryptvolume DRive(str) PROGdir(str)]
+	syntax [anything(name=volume)], [Mount DISmount TCryptvolume DRive(str) PROGdir(str)]
 
 	***Check syntax***
 
