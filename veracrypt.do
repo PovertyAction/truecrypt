@@ -1,5 +1,5 @@
-*! version 1.2.0 Matthew White 03jul2012
-pr truecrypt
+*! version 1.3.0 Patrick McNeal 13sep2016
+pr veracrypt
 	vers 9
 
 	if !inlist(c(os), "Windows", "MacOSX") {
@@ -7,7 +7,7 @@ pr truecrypt
 		ex 198
 	}
 
-	syntax [anything(name=volume)], [Mount DISmount DRive(str) PROGdir(str)]
+	syntax [anything(name=volume)], [Mount DISmount truecryptvolume DRive(str) PROGdir(str)]
 
 	***Check syntax***
 
@@ -39,7 +39,7 @@ pr truecrypt
 		conf f "`volume'"
 
 		* Make `volume' a clean absolute reference.
-		* TrueCrypt can't handle absolute references that are unclean
+		* VeraCrypt can't handle absolute references that are unclean
 		* (understood by Stata but not the OS) or relative references up the
 		* directory tree (containing ..).
 		mata: st_local("file", pathbasename("`volume'"))
@@ -94,12 +94,12 @@ pr truecrypt
 		}
 	}
 	else if "`mount'" != "" & c(os) == "MacOSX" {
-		* If -mount- is specified and -drive()- is not, we want TrueCrypt to use
-		* the first free drive letter. On Windows, TrueCrypt will do this
+		* If -mount- is specified and -drive()- is not, we want VeraCrypt to use
+		* the first free drive letter. On Windows, VeraCrypt will do this
 		* automatically if not specified a drive letter, but on Mac, it will
 		* select something other than a drive letter as the mount directory. So
-		* if -truecrypt- is run on Stata for Mac, we'll have Stata determine the
-		* first free drive letter, then pass it to TrueCrypt.
+		* if -VeraCrypt- is run on Stata for Mac, we'll have Stata determine the
+		* first free drive letter, then pass it to VeraCrypt.
 
 		foreach letter in `c(ALPHA)' {
 			loc drive ~/`letter'colon
@@ -116,28 +116,28 @@ pr truecrypt
 	* -progdir()-
 	if "`progdir'" == "" {
 		if c(os) == "Windows" ///
-			loc progdir C:\Program Files\TrueCrypt
+			loc progdir C:\Program Files\VeraCrypt
 		else ///
-			loc progdir /Applications/TrueCrypt.app/Contents/MacOS
+			loc progdir /Applications/VeraCrypt.app/Contents/MacOS
 	}
 	else if c(os) == "MacOSX" ///
-		loc progdir `progdir'/TrueCrypt.app/Contents/MacOS
-	conf f "`progdir'/TrueCrypt`=cond(c(os) == "Windows", ".exe", "")'"
+		loc progdir `progdir'/VeraCrypt.app/Contents/MacOS
+	conf f "`progdir'/VeraCrypt`=cond(c(os) == "Windows", ".exe", "")'"
 	***End***
 
 	if c(os) == "Windows" {
 		* -mount-
 		if "`mount'" != "" ///
-			sh "`progdir'\TrueCrypt.exe" /v "`volume'" `=cond("`drive'" != "", "/l `drive'", "")' /q
+			sh "`progdir'\VeraCrypt.exe" `=cond("`truecryptvolume'" != "", "/truecrypt", "")' /v "`volume'" `=cond("`drive'" != "", "/l `drive'", "")' /q
 		* -dismount-
 		else ///
-			sh "`progdir'\TrueCrypt.exe" /d `drive' /q
+			sh "`progdir'\VeraCrypt.exe" /d `drive' /q
 	}
 	else {
 		if "`mount'" != "" ///
-			sh "`progdir'/TrueCrypt" "`volume'" `drive'
+			sh "`progdir'/VeraCrypt" `=cond("`truecryptvolume'" != "", "--truecrypt", "")' "`volume'" `drive'
 		else ///
-			sh "`progdir'/TrueCrypt" -d `drive'
+			sh "`progdir'/VeraCrypt" -d `drive'
 	}
 end
 
@@ -149,3 +149,5 @@ end
 * version 1.2.0  03jul2012
 *	Compatible with Mac OS X
 *	All references to the TrueCrypt volume accepted
+* version 1.3.0 13sep2016
+* replace all code references to TrueCrypt with VeraCrypt
